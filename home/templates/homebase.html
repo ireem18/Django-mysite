@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>{% block title %} Luigi's {% endblock %} </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <!-- Font -->
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,600'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/beyond_the_mountains-webfont.css'%}" type="text/css"/>
+
+    <!-- Stylesheets -->
+    <link href="{% static 'plugin-frameworks/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'plugin-frameworks/swiper.css'%}" rel="stylesheet">
+    <link href="{% static 'fonts/ionicons.css'%}" rel="stylesheet">
+    <link href="{% static 'common/styles.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel = 'shortcut icon'  href = "{% static 'image/icon.jpeg'%}" >
+
+
+
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+    {%  include 'header.html' %}
+    {%  block slider %}{% endblock %}
+    {%  block content %}{% endblock %}
+    {%  block body %}{% endblock %}
+    {%  include 'footer.html' %}
+</body>
+</html>
