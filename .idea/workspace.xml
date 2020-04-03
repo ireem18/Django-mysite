@@ -4,9 +4,6 @@
     <list default="true" id="a486dea1-732a-4d90-b3e0-35f01fcee1bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,30 +64,40 @@
       <option name="project" value="LOCAL" />
       <updated>1585400792277</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="CKEditor eklendi">
+      <created>1585866707887</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585866707887</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Slider degisti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slider degisti" />
+    <MESSAGE value="CKEditor eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="CKEditor eklendi" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585400790914">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585866706775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585400790914" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585866706775" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1585839953297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585839953297" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1585400818053">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1585866992411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585400818053" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1585866602966">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585866992411" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1585922567945">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585836303312" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585922567945" />
     <state x="1745" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1584880111473" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585866602966" />
     <state x="700" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584640863709">
