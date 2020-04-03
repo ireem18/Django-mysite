@@ -19,9 +19,28 @@
 
 
 <section class="story-area left-text center-sm-text">
-        <div class="container">
+    <div class="row mt-50">
+                <div class="col-md-4 ml-40">
+        {% if message %}
+            {% for message in messages %}
+                <div class = "alert alert-{{message.tags}}" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form class="form-style-1 placeholder-1" action="" method="post" >
+            {% csrf_token %}
+            {{ form.as_p}}
+            <h6 class="center-text mtb-30"><button class="btn-primaryc plr-25" type="submit" style="width:200px"/>SEND FORM</h6>
+        </form>
+            </div>
+
+        <div class="col-md-4 ml-60">
                 {{ setting.contact | safe}}
         </div><!-- container -->
+
+ </div>
 </section>
 
 
