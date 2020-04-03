@@ -1,0 +1,30 @@
+{% extends "homebase.html" %}
+
+{% block title %} İletisim- {{ setting.company.title }} {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<section class="story-area left-text center-sm-text">
+        <div class="container">
+                {{ setting.contact | safe}}
+        </div><!-- container -->
+</section>
+
+
+
+
+{% endblock %}
