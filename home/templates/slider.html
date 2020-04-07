@@ -1,26 +1,27 @@
 {% load static %}
 
 {% if page == 'home' %}
-<section class="bg-1 h-900x main-slider pos-relative mySlides" >
-
-        <div class="triangle-up pos-bottom"></div>
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-                <div class="dplay-tbl">
+{% for rs in sliderdata %}
+<images class="  h-700x main-slider pos-relative mySlides "  >
+        <img class=" h-700x " src="{{ rs.image.url }}">
+           <div class="container h-100">
+                <div class="">
                         <div class="dplay-tbl-cell center-text color-white">
-
-                                <h5><b>BEST IN TOWN</b></h5>
-                                <h1 class="mt-30 mb-15">Pizza & Pasta</h1>
-                                <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-</section>
-
-<section class="bg-4 h-900x main-slider pos-relative mySlides ">
+                                <h1 class="mt-30 mb-15">{{ rs.title}}</h1>
+                                <h5>{{rs.description}}</h5>
+                                <h6 class="center-text mtb-30"><button class="btn-primaryc plr-25" type="submit" style="width:200px"/>SATIN AL</h6>
+                        </div>
+                </div>
+        </div>
         <div class="triangle-up pos-bottom"></div>
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</images>
+
+{% endfor %}
+<!--
+<section class="bg-4 h-900x main-slider pos-relative mySlides ">
         <div class="triangle-up pos-bottom"></div>
         <div class="container h-100">
                 <div class="dplay-tbl">
@@ -29,15 +30,14 @@
                                 <h5><b>BEST IN TOWN </b></h5>
                                 <h1 class="mt-30 mb-15">Pizza & Pasta</h1>
                                 <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
+                        </div>
+                </div>
+        </div>
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </section>
 
 <section class="bg-5 h-900x main-slider pos-relative mySlides ">
-        <div class="triangle-up pos-bottom"></div>
         <div class="triangle-up pos-bottom"></div>
         <div class="container h-100">
                 <div class="dplay-tbl">
@@ -46,13 +46,13 @@
                                 <h5><b>BEST</b></h5>
                                 <h1 class="mt-30 mb-15">Pizza & Pasta</h1>
                                 <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
+                        </div>
+                </div>
+        </div>
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </section>
-
+--->
 {% elif page == 'hakkimizda'%}
 <section class="bg-4 h-500x main-slider pos-relative">
         <div class="triangle-up pos-bottom"></div>

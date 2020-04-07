@@ -4,9 +4,9 @@
     <list default="true" id="a486dea1-732a-4d90-b3e0-35f01fcee1bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/common/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/common/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585942264513</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ContactFormMessage modeli oluşturuldu">
+      <created>1585948482569</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585948482569</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -97,27 +104,28 @@
     <MESSAGE value="CKEditor eklendi" />
     <MESSAGE value="Ürün detay kısmında degisiklik oldu" />
     <MESSAGE value="hakkimizda iletisim ve referans sayfaları eklendi" />
-    <option name="LAST_COMMIT_MESSAGE" value="hakkimizda iletisim ve referans sayfaları eklendi" />
+    <MESSAGE value="ContactFormMessage modeli oluşturuldu" />
+    <option name="LAST_COMMIT_MESSAGE" value="ContactFormMessage modeli oluşturuldu" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585942263851">
+    <state x="617" y="0" key="CommitChangelistDialog2" timestamp="1585948481946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585942263851" />
+    <state x="617" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585948481946" />
     <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585866706775" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1585839953297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585839953297" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1585942283072">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1585948489662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585942283072" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585948489662" />
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585866992411" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1585922567945">
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1586267366431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585922567945" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586267366431" />
     <state x="1745" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1584880111473" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585866602966" />
     <state x="700" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584640863709">
