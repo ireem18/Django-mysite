@@ -2,22 +2,28 @@
 
 {% if page == 'home' %}
 {% for rs in sliderdata %}
-<images class="  h-700x main-slider pos-relative mySlides "  >
-        <img class=" h-700x " src="{{ rs.image.url }}">
+
+<images class="  h-700x main-slider  mySlides">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="  h-700x  " style="background-image: url('{{ rs.image.url }}');">
+
            <div class="container h-100">
-                <div class="">
+                <div class="dplay-tbl" >
                         <div class="dplay-tbl-cell center-text color-white">
                                 <h1 class="mt-30 mb-15">{{ rs.title}}</h1>
                                 <h5>{{rs.description}}</h5>
-                                <h6 class="center-text mtb-30"><button class="btn-primaryc plr-25" type="submit" style="width:200px"/>SATIN AL</h6>
+                                <a href="/product/{{rs.id}}/{{rs.slug}}" class="btn-primaryc plr-25" type="submit" style="width:200px">SATIN AL</a>
                         </div>
                 </div>
         </div>
-        <div class="triangle-up pos-bottom"></div>
+
 
         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+ </div>
+
 </images>
+
 
 {% endfor %}
 <!--
@@ -114,3 +120,4 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
 }
 </script>
+
