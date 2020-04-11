@@ -1,0 +1,50 @@
+
+{% extends "homebase.html" %}
+
+{% block title %}  {{ categoryData.title }} {% endblock %}
+{% block keywords %} {{ categoryData.keywords }}  {% endblock %}
+{% block descriptions %} {{ categoryData.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<section class="story-area left-text center-sm-text">
+        {% load static %}
+        <div class="container">
+                <div class="heading"><h3>{{categoryData.title}}</h3> <hr >
+                </div>
+
+                <div class="row">
+                         {% for rs in products %}
+                        <div class="col-lg-3 col-md-4  col-sm-6 ">
+                                <div class="center-text mb-5">
+                                        <div class="ïmg-200x mlr-auto pos-relative">
+                                                <h6 class="ribbon-cont color-white"><div class="ribbon primary"></div><b>OFFER</b></h6>
+                                                <img src="{{ rs.image.url }}" alt="">
+                                        </div>
+                                        <h5 class=""><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a></h5>
+                                        <h4 class="mt-5 color-primary"><b>${{rs.price}}</b></h4>
+                                        <a href="/product/{{rs.id}}/{{rs.slug}}" class="btn-primaryc plr-25" type="submit" style="width:200px">SATIN AL</a>
+                                </div><!--text-center-->
+                        </div><!-- col-md-3 -->
+
+
+                        {% endfor %}
+                </div><!-- row-->
+        </div><!-- container -->
+</section>
+
+
+
+{% endblock %}

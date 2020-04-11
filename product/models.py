@@ -38,7 +38,7 @@ class Category(MPTTModel):
 
     def image_tag(self):
         return mark_safe('<img src = "{}" height ="50"/>'.format(self.image.url))
-    image_tag.short_description = 'Image'
+    image_tag.short_description = 'Images'
 
 class Product(models.Model):
     STATUS = (
@@ -63,7 +63,7 @@ class Product(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src = "{}" height ="50"/>'.format(self.image.url))
-    image_tag.short_description = 'Image'
+    image_tag.short_description = 'Images'
 
 class Images(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -74,4 +74,4 @@ class Images(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src = "{}" height ="50"/>'.format(self.image.url))
-    image_tag.short_description = 'Image'
+    image_tag.short_description = 'Images'

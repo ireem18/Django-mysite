@@ -15,9 +15,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title', 'price' ,'status']
+    list_display = ['title', 'price' ,'status','image_tag']
     list_filter = ['status', 'category']
     inlines = [ProductImageInline]
+    readonly_fields = 'image_tag',
 
 
 class ImagesAdmin(admin.ModelAdmin):
