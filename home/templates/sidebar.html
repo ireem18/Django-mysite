@@ -1,0 +1,163 @@
+{% load static %}
+<section>
+        <div class="mb-50">
+                <div class="heading">
+                        <img class="heading-img" src="{% static 'images/heading_logo.png'%}" alt="">
+                        <h2>Our Menu</h2>
+                </div>
+            <div>
+                <div class="row">
+                    <div class="sidenav w3-bar-block" style="margin-left:5%">
+                        {% load mptt_tags %}
+                         <ul class="anamenu">
+                        {% recursetree category %}
+                            <li class=""  >
+                                <a href="/category/{{ node.slug }}" class="  w3-bar-item w3-button selecton  brdr-b-primary ">{{node.title}}</a>
+                                {% if not node.is_leaf_node %}
+                                 <ul class="altmenu">
+                                     <li class=>
+                                        <a  href="/category/{{ node.slug }}"  style="color:black">{{ children }}</a>
+                                     </li>
+                                 </ul>
+                                {% endif %}
+                            </li>
+                         {% endrecursetree %}
+                         </ul>
+                    </div>
+
+                    <div class="col-md-3 ">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-1-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Pizza Margherita</b><b class="color-primary float-right">$12.00</b></h5>
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                    </div><!-- food-menu -->
+
+                    <div class="col-md-3 ">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-2-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Italian pasta</b><b class="color-primary float-right">$20.00</b></h5>
+                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                    </div><!-- food-menu -->
+
+                    <div class="col-md-3 ">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-3-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Pizza Prosciuto</b><b class="color-primary float-right">$12.00</b></h5>
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                    </div><!-- food-menu -->
+                </div><!-- row -->
+            </div>
+        </div><!-- container -->
+</section>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:white  color:black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border:10px dotted red;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  background: white;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+    background-color:white;
+    color:white;
+}
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 17px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+  background-color:white;
+}
+@media screen and (max-height: 250px) {
+  .sidenav {padding-top: 100%;}
+  .sidenav a {font-size: 8px;}
+}
+.anamenu, .altmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.anamenu a{
+  display: block;
+  background-color:white;
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+}
+.anamenu a:hover {
+    background-color:white;
+}
+.anamenu li:hover .altmenu {
+  display: block;
+  max-height: 200px;
+}
+.altmenu a{
+  background-color:white;
+}
+.altmenu a:hover {
+  background-color:white;
+}
+.altmenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+</style>
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>

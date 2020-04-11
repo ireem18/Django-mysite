@@ -289,3 +289,11 @@ function showDivs(n) {
     x[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " w3-white";
 }
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}

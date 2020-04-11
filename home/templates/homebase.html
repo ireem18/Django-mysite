@@ -5,10 +5,11 @@
     <title>{% block title %} Luigi's {% endblock %} </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta charset="UTF-8">
 
     <!-- Font -->
-    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,600'%}" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'fonts/beyond_the_mountains-webfont.css'%}" type="text/css"/>
 
     <!-- Stylesheets -->
@@ -21,12 +22,12 @@
 
 
 
-
     {% block head %} {% endblock %}
 </head>
 <body>
     {%  include 'header.html' %}
     {%  block slider %}{% endblock %}
+    {%  block sidebar %}{% endblock %}
     {%  block content %}{% endblock %}
     {%  block body %}{% endblock %}
     {%  include 'footer.html' %}
