@@ -1,13 +1,14 @@
 {% load static %}
-<section>
-        <div class="mb-5">
+
+ <section class="story-area left-text center-sm-text pos-relative">
+        <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
+        <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
+        <div class="w3-container">
                 <div class="heading">
                         <img class="heading-img" src="{% static 'images/heading_logo.png'%}" alt="">
                         <h2>KATEGORİLER</h2>
                 </div>
-            <div>
-                <div class="row">
-                    <div class="sidenav w3-bar-block" style="margin-left:5%">
+                    <div class="sidenav w3-bar-block" style="margin-left:42%">
                         {% load mptt_tags %}
                          <ul class="anamenu">
                         {% recursetree category %}
@@ -25,36 +26,6 @@
                          </ul>
                     </div>
 
-                    <div class="col-md-3 ">
-                                <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-1-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Margherita</b><b class="color-primary float-right">$12.00</b></h5>
-                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
-
-                    <div class="col-md-3 ">
-                                <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-2-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Italian pasta</b><b class="color-primary float-right">$20.00</b></h5>
-                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
-
-                    <div class="col-md-3 ">
-                                <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="{% static 'images/menu-3-120x120.jpg' %}" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Prosciuto</b><b class="color-primary float-right">$12.00</b></h5>
-                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
-
                 </div><!-- row -->
             </div>
         </div><!-- container -->
@@ -68,7 +39,7 @@ body {
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
-  width: 200px;
+  width: 210px;
   position: relative;
   z-index: 1;
   top: 0;
