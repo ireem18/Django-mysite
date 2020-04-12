@@ -1,0 +1,88 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{product.title}}{% endblock %}
+{% block keywords %} {{ product.keywords }}  {% endblock %}
+{% block descriptions %} {{ product.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<section class="story-area left-text center-sm-text pt-0">
+        <div class="container">
+                <h3 class="font-9 mb-10 mb-sm-40 left-text"><ul class="row">
+                    <li><a href="/">ANASAYFA>> </a></li>
+                    <li><a href="/products">ÜRÜNLER>> </a></li>
+                    <li><a href="/category/{{ product.category_id }}/{{product.category.slug}}">{{product.category}}>></a></li>
+                    <li class="active">{{product.title}}</li>
+                </ul></h3>
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                           {% for rs in images %}
+                            <div class="col-sm-6 h-200 mt-50 mySlides">
+                                    <img class="br-4 h-200" src="{{rs.image.url}}" alt="Menu Image">
+                                    <button class="w3-button w3-red w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                    <button class="w3-button w3-red w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                            </div>
+                            {% endfor %}
+                            <div class="row">
+                            {% for rs in images %}
+                            <div class="col-sm-3 mt-50">
+                                <img src="{{rs.image.url}}">
+                            </div>
+                            {% endfor %}
+                            </div>
+                    </div><!--col-sm-6-->
+
+                    <div class="col-md-12 col-lg-6">
+                         <div class="col-sm-6">
+                             <h5 class="font-30 mb-10 mb-sm-40 left-text"><b>{{product.title}}</b></h5>
+                             <h3  class="color-black"><b>{{product.price}}</b></h3>
+                             <p class="left-text" >{{product.description}}  </p>
+                             <h6 class="dplay-inl-block m-10"><a href="#" class="btn-fill-primary plr-25"><b>SİPARİŞ VER</b></a></h6>
+                             </div>
+
+                    </div><!-- col-sm-6-->
+
+
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+
+
+
+{% endblock %}
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>

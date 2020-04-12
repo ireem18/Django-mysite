@@ -3,14 +3,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 from home.models import Setting, ContactForm, ContactFormMessage
-from product.models import Product, Category
+from product.models import Product, Category, Images
 
 
 def index(request):
         setting = Setting.objects.get(pk=2)
         sliderdata = Product.objects.all()[:3]
         category = Category.objects.all()
-        dayproducts = Product.objects.all()[:4]
+        dayproducts = Product.objects.all()[3:5]
         lastproducts = Product.objects.all().order_by('-id')[:4]
         randomproducts = Product.objects.all().order_by('?')[:4]
 
@@ -72,3 +72,14 @@ def products(request):
                    'category': category,
                     'page':'products'}
         return render(request, 'products.html',context)
+
+def product_detail(request,id,slug):
+    mesaj = "Ürün",id,"/",slug
+    images = Images.objects.filter(product_id = id)
+    category = Category.objects.all()
+    product = Product.objects.get(pk=id)
+    context = {'page':'product_detail',
+               'category': category,
+               'product': product,
+               'images': images}
+    return render(request,'product_detail.html',context)
