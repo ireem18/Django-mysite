@@ -1118,7 +1118,9 @@ section {
         height: 55px;
 }
 
-.form-mb-20 input,
+.form-mb-20 input{
+	width:200px;
+}
 .form-mb-20 textarea {
         margin-bottom: 20px;
 }

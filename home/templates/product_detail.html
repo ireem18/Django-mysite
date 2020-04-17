@@ -1,5 +1,6 @@
-{% extends "homebase.html" %}
 
+{% extends "homebase.html" %}
+{% load static %}
 {% block title %} {{product.title}}{% endblock %}
 {% block keywords %} {{ product.keywords }}  {% endblock %}
 {% block descriptions %} {{ product.description }} {% endblock %}
@@ -28,61 +29,110 @@
                     <li class="active">{{product.title}}</li>
                 </ul></h3>
 
-                <div class="row">
-                    <div class="col-md-12 col-lg-6">
-                           {% for rs in images %}
-                            <div class="col-sm-6 h-200 mt-50 mySlides">
-                                    <img class="br-4 h-200" src="{{rs.image.url}}" alt="Menu Image">
-                                    <button class="w3-button w3-red w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                                    <button class="w3-button w3-red w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                <div class="row " style="border:1px dashed red">
+                    <div class="col-md-12 col-lg-6  ">
+                            <div class="col-sm-6 h-200 mt-50 ">
+                                    <img class="br-4 h-200 expandedImg" src="{{product.image.url}}" alt="Menu Image">
                             </div>
-                            {% endfor %}
-                            <div class="row">
+                            <div class="mr-50">
+                            <div class="row gallery cf h-50 w-90 " >
                             {% for rs in images %}
-                            <div class="col-sm-3 mt-50">
-                                <img src="{{rs.image.url}}">
+                            <div class="col-sm-3 mt-50  column">
+                                <img class="h-60 w-100 " src="{{rs.image.url}}" onclick="myFunction(this);">
                             </div>
+
                             {% endfor %}
                             </div>
+                            </div>
+
                     </div><!--col-sm-6-->
 
                     <div class="col-md-12 col-lg-6">
                          <div class="col-sm-6">
-                             <h5 class="font-30 mb-10 mb-sm-40 left-text"><b>{{product.title}}</b></h5>
-                             <h3  class="color-black"><b>{{product.price}}</b></h3>
+                             <h5 class="font-30 mt-20 mb-sm-40 left-text"><b>{{product.title}}</b></h5>
+                             <h3  class="color-black">FİYAT = {{product.price}}</h3>
                              <p class="left-text" >{{product.description}}  </p>
-                             <h6 class="dplay-inl-block m-10"><a href="#" class="btn-fill-primary plr-25"><b>SİPARİŞ VER</b></a></h6>
+                            <div class="" >
+                                <button type="button" onclick="azalt()" >-</button>
+                                <input type="text" value="0" size="5" id="sayi" name="sayi">
+                                <button type="button" onclick="artir()">+</button>
+                            </div>
+                             <h6 class="dplay-inl-block mt-100"><a href="#" class="btn-fill-primary plr-25"><b>SİPARİŞ VER</b></a></h6>
                              </div>
 
                     </div><!-- col-sm-6-->
 
-
                 </div><!-- row -->
+
+                <section class="story-area left-text center-sm-text pos-relative">
+                     <div class="w3-container">
+                     <div class="row">
+                    <div class="col-md-12 col-lg-6 ">
+                    <h4>YORUMLAR</h4>
+                        <div class="container" >
+                            {% for rs in comments%}
+                            <div style="border:1px solid pink,padding:5">
+                            <div><i class="fa fa-user-o"></i><b>{{rs.user}}</b></div>
+                            <div><i class="fa fa-clock-o"></i>{{rs.create_at}}</div>
+                            <div style="color:pink"><h4>{{rs.subject}}</h4>
+                                <p>{{rs.comment}}</p>
+                            </div>
+                            </div><br>
+                            {% endfor %}
+                        </div>
+
+                    </div><!--col-sm-6-->
+
+                    <div class="col-md-12 col-lg-6">
+                        <h4>YORUMUNU GÖNDER</h4>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{message.tags}}" role="alert">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <p class=" " style="color:pink">E-posta hesabınız yayımlanmayacaktır...</p><br>
+                        <form action="/product/addcomment/{{ product.id }}" method="post">
+                            {% csrf_token %}
+                            <div class="">
+                                <div class=""> <input class="mb-20"  name="subject" style="width:100%" type="text" placeholder="Subject"> </div>
+                                <div class="">
+                                    <textarea class="h-200x ptb-20"  name="comment" style="width:100%" placeholder="Message"></textarea></div>
+                            </div><!-- row -->
+                            <strong style="color:pink">Puanın Nedir?</strong>
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rate" value="5" /><label for="star5"></label>
+                                <input type="radio" id="star4" name="rate" value="4" /><label for="star4"></label>
+                                <input type="radio" id="star3" name="rate" value="3" /><label for="star3"></label>
+                                <input type="radio" id="star2" name="rate" value="2" /><label for="star2"></label>
+                                <input type="radio" id="star1" name="rate" value="1" /><label for="star1"></label>
+                            </div>
+
+                            {% if user.id is not None %}
+                            <h6 class="center-text mtb-30"><button href="#" class="btn-primaryc plr-25"><b>MESAJINI GÖNDER</b></button></h6>
+                            {% else %}
+                                Yorum elemek için login olunuz!
+                            {% endif %}
+                        </form>
+
+                    </div><!-- col-sm-6-->
+                </div>
+                </div><!-- row -->
+                </section>
+
+
         </div><!-- container -->
 </section>
 
 
-
-
 {% endblock %}
-
-
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
 }
 </script>

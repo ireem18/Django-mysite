@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 from home.models import Setting, ContactForm, ContactFormMessage
-from product.models import Product, Category, Images
+from product.models import Product, Category, Images, Comment
 
 
 def index(request):
@@ -78,8 +78,10 @@ def product_detail(request,id,slug):
     images = Images.objects.filter(product_id = id)
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
+    comments = Comment.objects.filter(product_id=id,status='True')
     context = {'page':'product_detail',
                'category': category,
                'product': product,
-               'images': images}
+               'images': images,
+               'comments': comments}
     return render(request,'product_detail.html',context)
