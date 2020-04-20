@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a486dea1-732a-4d90-b3e0-35f01fcee1bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/common/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/common/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587140040985</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="CSS düzenlemesi yapıldı">
+      <created>1587406526986</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587406526986</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -160,26 +163,27 @@
     <MESSAGE value="Ürünlerin anasayfada gösterilmesi için gerekli işlemler gerçekleştirildi." />
     <MESSAGE value="product_detail.html sayfası oluşturuldu.Ürün detay sayfasında resim galerisi eklendi." />
     <MESSAGE value="Ürün detay sayfasına yorum ekleme ve yapılan yorumların gösterimi sağlandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ürün detay sayfasına yorum ekleme ve yapılan yorumların gösterimi sağlandı." />
+    <MESSAGE value="CSS düzenlemesi yapıldı" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS düzenlemesi yapıldı" />
   </component>
   <component name="WindowStateProjectService">
     <state x="465" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586551274487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586551274487" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1587140040172">
+    <state x="525" y="0" key="CommitChangelistDialog2" timestamp="1587406523618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="539" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586694339227" />
+    <state x="525" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1587406523618" />
     <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587140040172" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1585839953297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585839953297" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1587140049469">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1587406537598">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586694347651" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1587406537598" />
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587140049469" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1587406496508">
       <screen x="0" y="0" width="1366" height="728" />
