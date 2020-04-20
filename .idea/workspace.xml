@@ -5,15 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/static/common/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/common/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586694340016</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ürün detay sayfasına yorum ekleme ve yapılan yorumların gösterimi sağlandı.">
+      <created>1587140040985</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587140040985</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,33 +159,34 @@
     <MESSAGE value="products.html sayfası olusturuldu" />
     <MESSAGE value="Ürünlerin anasayfada gösterilmesi için gerekli işlemler gerçekleştirildi." />
     <MESSAGE value="product_detail.html sayfası oluşturuldu.Ürün detay sayfasında resim galerisi eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="product_detail.html sayfası oluşturuldu.Ürün detay sayfasında resim galerisi eklendi." />
+    <MESSAGE value="Ürün detay sayfasına yorum ekleme ve yapılan yorumların gösterimi sağlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ürün detay sayfasına yorum ekleme ve yapılan yorumların gösterimi sağlandı." />
   </component>
   <component name="WindowStateProjectService">
     <state x="465" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586551274487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586551274487" />
-    <state x="539" y="0" key="CommitChangelistDialog2" timestamp="1586694339227">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1587140040172">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="539" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586694339227" />
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585866706775" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587140040172" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1585839953297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585839953297" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1586694347651">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1587140049469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1586694347651" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585866992411" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1587129653550">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587140049469" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1587406496508">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1587129653550" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1587406496508" />
     <state x="1745" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1584880111473" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585866602966" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587386801668" />
     <state x="700" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584640863709">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
