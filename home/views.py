@@ -1,3 +1,5 @@
+import json
+
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -28,12 +30,18 @@ def index(request):
 
 def hakkimizda(request):
         setting = Setting.objects.get(pk=2)
-        context = {'setting':setting, 'page':'hakkimizda'}
+        category = Category.objects.all()
+        context = {'setting':setting,
+                   'category': category,
+                   'page':'hakkimizda'}
         return render(request, 'hakkimizda.html',context)
 
 def referanslar(request):
         setting = Setting.objects.get(pk=2)
-        context = {'setting':setting, 'page':'referanslar'}
+        category = Category.objects.all()
+        context = {'setting':setting,
+                   'category': category,
+                   'page':'referanslar'}
         return render(request, 'referanslarimiz.html',context)
 
 def iletisim(request):
@@ -52,7 +60,10 @@ def iletisim(request):
 
         setting = Setting.objects.get(pk=2)
         form = ContactForm()
-        context = {'setting':setting, 'form': form}
+        category = Category.objects.all()
+        context = {'setting':setting,
+                   'category': category,
+                   'form': form}
         return render(request, 'iletisim.html',context)
 
 def category_products(request,id,slug):
@@ -94,8 +105,29 @@ def product_search(request):
         if form.is_valid():
             category = Category.objects.all()
             query = form.cleaned_data['query'] #formdan bilgiyi al
-            products = Product.objects.filter(title__icontains=query) # select * from product where title like %query%
+            #catid = form.cleaned_data['catid']
+
+            #if catid == 0:
+            #  products = Product.objects.filter(title__icontains=query)
+            #else:
+            products = Product.objects.filter(title__icontains=query)
+
             context = {'products':products,
                        'category':category,}
-            return render(request,'products_search.html',context)
+            return render(request, 'products_search.html', context)
         return HttpResponseRedirect('/')
+
+def product_search_auto(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '') #script dosyasından alan foonksiyonu term olarak algılar
+    product = Product.objects.filter(title__icontains=q)
+    results = []
+    for rs in product:
+      product_json = {}
+      product_json =rs.title
+      results.append(product_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)

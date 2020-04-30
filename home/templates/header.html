@@ -1,5 +1,4 @@
 {% load static %}
-
 <header>
         <div class="container color-white" >
                 <a class="logo" href="#"><img src="{% static 'images/logo-white.png' %}" alt="Logo"></a>
@@ -11,11 +10,26 @@
                         <li><a href="/products">Hizmetler</a></li>
                         <li><a href="/referanslar">Referanslar</a></li>
                         <li><a href="/iletisim">İletişim</a></li>
-                          <div class="search-container" class="w-10">
-                                <form action="/search/" method="post"> <!-- action search oldugu icin url eklememiz gerekiyor-->
-                                        {% csrf_token %} <!-- formlarda csrf kullanılmalı -->
-                                        <input class="input" type="text" placeholder="Search.." name="query" style="width:70px">
-                                        <button type="submit"><i class="fa fa-search"></i></button>
+                          <div class="search-container" class="">
+                                <form action="/search/" method="post" > <!-- action search oldugu icin url eklememiz gerekiyor-->
+                                        {% load mptt_tags %}
+                                        <select name="catid" class="input"  style="background:transparent;color:#EF0031;">
+                                            <option value="0">Kategoriler</option>
+                                            {% recursetree category %}
+                                                {% if node.is_leaf_node %}
+                                                    <option value="{{node.id}}">{{node.title}}</option>
+                                                {% endif %}
+                                                {% if not node.is_leaf_node %}
+                                                    <optgroup label="{{node.title}}">
+                                                        {{children}}
+                                                    </optgroup>
+                                                {% endif %}
+                                            {% endrecursetree %}
+                                        </select>
+                                    {% csrf_token %} <!-- formlarda csrf kullanılmalı -->
+                                    <input id="query" class="input" type="text" placeholder="Search.." name="query" style="width:70px">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+
                                 </form>
                         </div>
                 </ul>
@@ -24,3 +38,21 @@
         </div><!-- container -->
 </header>
 
+<script>
+
+  $(function() {
+    $("#query").autocomplete({
+      source: "/search_auto/",
+      select: function (event, ui) { //item selected
+        AutoCompleteSelectHandler(event, ui)
+      },
+      minLength: 2,
+    });
+  });
+
+  function AutoCompleteSelectHandler(event, ui)
+  {
+    var selectedObj = ui.item;
+  }
+
+</script>
