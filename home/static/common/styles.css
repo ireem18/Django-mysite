@@ -7351,5 +7351,11 @@ ul.icon li a{ padding: 10px;  }
         }
 
 }
+.search-image{
+
+	width:50;
+	height:50;
+	border:3px solid red;
+}
 
 

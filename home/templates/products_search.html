@@ -1,0 +1,34 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block title %} {{product.title}}{% endblock %}
+{% block keywords %} {{ product.keywords }}  {% endblock %}
+{% block descriptions %} {{ product.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<table cellpadding="3" width="1200">
+    <tr>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+    <hr>
+    {% for rs in products %}
+    <tr>
+        <td ><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{rs.image.url}}" style="width:90px" > </a></td>
+        <td><h4 class=""><a href="/product/{{rs.id}}/{{rs.slug}}">{{rs.title}}</a></h4></td>
+        <td><a href="/category/{{rs.category.id}}/{{rs.category.slug}}">{{rs.category}}</a></td>
+        <td><h4>{{rs.price}}TL</h4></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

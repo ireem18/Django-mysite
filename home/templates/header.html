@@ -12,8 +12,9 @@
                         <li><a href="/referanslar">Referanslar</a></li>
                         <li><a href="/iletisim">İletişim</a></li>
                           <div class="search-container" class="w-10">
-                                <form action="/action_page.php">
-                                         <input class="input" type="text" placeholder="Search.." name="search" style="width:70px">
+                                <form action="/search/" method="post"> <!-- action search oldugu icin url eklememiz gerekiyor-->
+                                        {% csrf_token %} <!-- formlarda csrf kullanılmalı -->
+                                        <input class="input" type="text" placeholder="Search.." name="query" style="width:70px">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                         </div>
