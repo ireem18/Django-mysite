@@ -5,7 +5,7 @@ from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
-from home.forms import SearchForm
+from home.forms import SearchForm, SignUpForm
 from home.models import Setting, ContactForm, ContactFormMessage
 from product.models import Product, Category, Images, Comment
 
@@ -138,7 +138,6 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 def login_view(request):
-    category = Category.objects.all()
     if request.method == 'POST': #Check form post
         username = request.POST['username']
         password = request.POST['password']
@@ -149,5 +148,23 @@ def login_view(request):
         else:
             messages.warning(request, "Login Hatası! Kullanıcı adı ya da Şifre yanlış")
             return HttpResponseRedirect('/login')
+    category = Category.objects.all()
     context = {'category': category, }
     return render(request, 'login.html', context)
+
+def signup_view(request):
+    if request.method == 'POST': #Check form post
+        form = SignUpForm(request.POST)
+        if form.is_valid(): #Formdaki kontrolleri yapar
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request,user)
+            return HttpResponseRedirect('/')
+    form = SignUpForm()
+    category = Category.objects.all()
+    context = {'category': category,
+               'form': form,
+               }
+    return render(request, 'signup.html', context)

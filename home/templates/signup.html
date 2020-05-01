@@ -1,0 +1,56 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block title %} Sign Up {{ setting.company.title }} {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="mt-50">
+<section class="story-area left-text center-sm-text ">
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+
+                        <h5 class="mt-1" style="color:#EF0031;">USER SIGN UP </h5>
+
+                </div>
+                {% if message %}
+                    {% for message in messages %}
+                        <div class = "alert alert-{{message.tags}}" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form class="form-style-1 placeholder-1" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>
+                            {{field.label_tag}}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color:grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in filed.errors %}
+                                <p style="color:red">{{error}}</p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <h6 class="center-text mtb-30"><button type="submit" class="btn-primaryc plr-25"><b>Sign Up</b></button></h6>
+                </form>
+        </div><!-- container -->
+</section>
+</div>
+
+
+
+{% endblock %}
