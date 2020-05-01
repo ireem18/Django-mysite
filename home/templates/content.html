@@ -162,6 +162,7 @@
 					<div class="col-sm-6 col-md-4 col-lg-4">
 						<a class="lightbox" href="{% static 'images/gallery-img-06.jpg' %}">
 							<img class="img-fluid" src="{% static 'images/gallery-img-06.jpg' %}" alt="Gallery Images">
+
 						</a>
 					</div>
 
@@ -173,3 +174,14 @@
 </section>
 	<!-- End Gallery -->
 
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

@@ -1,0 +1,48 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block title %} Login- {{ setting.company.title }} {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="mt-50">
+<section class="story-area left-text center-sm-text ">
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+
+                        <h5 class="mt-1" style="color:#EF0031;">LOGIN FORMU</h5>
+
+                </div>
+                {% if message %}
+                    {% for message in messages %}
+                        <div class = "alert alert-{{message.tags}}" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form class="form-style-1 placeholder-1" method="post">
+                    {% csrf_token %}
+                        <div class="row">
+                                <div class="col-md-6"> <input class="mb-20" name ="username" type="text" placeholder="Name">  </div>
+                                <div class="col-md-6"> <input class="mb-20" name = "password" type="password" placeholder="Password">  </div>
+                        </div><!-- row -->
+                        <input type="submit" value="LOGIN" class=" col-md-12 w-100 center-sm-text"><b> </b>
+                </form>
+        </div><!-- container -->
+</section>
+</div>
+
+
+
+{% endblock %}

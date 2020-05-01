@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img, inpot, button { margin: 0; padd
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.5; font-weight: inherit; }
 
-h1, h2, h3, .font-beyond { font-family: 'beyond_the_mountainsregular', sans-serif; }
+h1, h2, h3, .font-beyond { font-family: sans-serif; }
 
 p { line-height: 1.7; font-size: 1.05em; font-weight: 400; color: #555; }
 
@@ -1076,9 +1076,9 @@ section {
 .form-style-1 input:active{ border-bottom: 3px solid #EF0031; }
 
 .placeholder-1 ::-webkit-input-placeholder { font-style: italic; color: #aaa; font-size: .9em;  }
-.placeholder-1 ::-moz-placeholder { font-style: italic; color: #aaa; font-size: .9em; }
-.placeholder-1 :-ms-input-placeholder { font-style: italic; color: #aaa; font-size: .9em;  }
-.placeholder-1 :-moz-placeholder { font-style: italic; color: #aaa; font-size: .9em;  }
+.placeholder-1 ::-moz-placeholder { color: #aaa; font-size: .9em; }
+.placeholder-1 :-ms-input-placeholder {  color: #aaa; font-size: .9em;  }
+.placeholder-1 :-moz-placeholder { color: #aaa; font-size: .9em;  }
 
 
 .form-bold input,

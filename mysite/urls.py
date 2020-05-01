@@ -35,6 +35,8 @@ urlpatterns = [
     path('search/', views.product_search, name='product_search'),
     #Viewleri görmesinin sebebi home view import edilmesi
     path('search_auto/', views.product_search_auto, name='product_search_auto'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

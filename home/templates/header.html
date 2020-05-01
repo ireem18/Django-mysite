@@ -10,8 +10,26 @@
                         <li><a href="/products">Hizmetler</a></li>
                         <li><a href="/referanslar">Referanslar</a></li>
                         <li><a href="/iletisim">İletişim</a></li>
+                        <li class="dropdown">
+                            {% if user.id is not None %}
+                            <div class="dropbtn">
+                                <i class="w-20 fa fa-user-o"></i>
+                                 <strong class="text">{{user}}<i></i> </strong>
+                            </div>
+                           {% else %}
+                            <a href="/login/" class="text">Login</a> / <a href="/join/" class="text">Join</a>
+                            {% endif %}
+                            <ul class="dropdown-content">
+                                <li><a href="#"><i class="fa fa-user-o">  My Account</i> </a> </li>
+                                <li><a href="#"><i class="fa fa-heart-o">  My Wishlist</i> </a> </li>
+                                <li><a href="#"><i class="fa fa-exchange">  My Orders</i> </a> </li>
+                                <li><a href="#"><i class="fa fa-check">  My Comments</i> </a> </li>
+                                <li><a href="/logout/"><i class="fa fa-unlock-alt">  Logout</i> </a> </li>
+                            </ul>
+                        </li>
                           <div class="search-container" class="">
                                 <form action="/search/" method="post" > <!-- action search oldugu icin url eklememiz gerekiyor-->
+                                        <!--
                                         {% load mptt_tags %}
                                         <select name="catid" class="input"  style="background:transparent;color:#EF0031;">
                                             <option value="0">Kategoriler</option>
@@ -26,6 +44,7 @@
                                                 {% endif %}
                                             {% endrecursetree %}
                                         </select>
+                                        -->
                                     {% csrf_token %} <!-- formlarda csrf kullanılmalı -->
                                     <input id="query" class="input" type="text" placeholder="Search.." name="query" style="width:70px">
                                     <button type="submit"><i class="fa fa-search"></i></button>
@@ -56,3 +75,48 @@
   }
 
 </script>
+
+<style>
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #E5E8E3;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color:#EF0031;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {color:#EF0031;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+
+}
+</style>
