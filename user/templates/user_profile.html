@@ -1,0 +1,88 @@
+{% extends "homebase.html" %}
+
+{% block title %} Masa {{ profile.masa_no }} {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+{% load static %}
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="mt-50">
+<section class="story-area left-text center-sm-text mt-50" >
+    <div class="heading">
+            <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+    </div>
+
+
+
+<section class="story-area left-text center-sm-text pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="row-md-4">
+                        {% include "user_panel.html" %} <!-- Html içerisinde html sayfası çağırmak için -->
+                    </div>
+                </div><!-- col-sm-6-->
+                <div class="col-md-12 col-lg-8">
+                    <h3>TABLE INFORMATION</h3>
+
+                    <table cellpadding="7" height="150px" width="400px" align="center">
+                        <tr>
+                                <th>Masa: </th>
+                                <td ><img style="width:60px;height:50px;textAlign: left;" src="{{profile.image.url}}"></td>
+                        </tr>
+                        <tr >
+                            <th>Masa Numarası:</th>
+                            <td class="ml-20"> {{profile.masa_no}}</td>
+                        </tr>
+                        <tr >
+                            <th>E-mail Adresimiz:</th>
+                            <td class="ml-20"> {{profile.email}}</td>
+                        </tr>
+                    </table>
+                </div><!--tab-style-1-->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+
+
+
+
+</section>
+</div>
+
+
+
+{% endblock %}
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>

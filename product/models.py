@@ -94,6 +94,7 @@ class Comment(models.Model):
     )
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(blank=True, max_length=20)
     subject = models.CharField(max_length=50)
     comment = models.TextField(max_length=200,blank=True)
     rate = models.IntegerField(blank=True)
@@ -107,4 +108,4 @@ class Comment(models.Model):
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ['subject', 'comment', 'rate'] #htmlden hangi alanlar çagrılack ise o yazılır
+        fields = ['subject', 'name','comment', 'rate'] #htmlden hangi alanlar çagrılack ise o yazılır

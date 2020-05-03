@@ -5,7 +5,6 @@
                 <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
                 <ul class="main-menu font-mountainsre" id="main-menu">
                         <li><a href="/">Anasayfa</a></li>
-                         <li><a href="/galeri">Galeri</a></li>
                         <li><a href="/hakkimizda">Hakkımızda</a></li>
                         <li><a href="/products">Hizmetler</a></li>
                         <li><a href="/referanslar">Referanslar</a></li>
@@ -14,13 +13,14 @@
                             {% if user.id is not None %}
                             <div class="dropbtn">
                                 <i class="w-20 fa fa-user-o"></i>
+                               <!-- <img src = "{{ user.profile.image.url }}">-->
                                  <strong class="text">{{user}}<i></i> </strong>
                             </div>
                            {% else %}
                             <a href="/login/" class="text">Login</a> / <a href="/signup/" class="text">Sign Up</a>
                             {% endif %}
                             <ul class="dropdown-content">
-                                <li><a href="#"><i class="fa fa-user-o">  My Account</i> </a> </li>
+                                <li><a href="/user/"><i class="fa fa-user-o">  My Account</i> </a> </li>
                                 <li><a href="#"><i class="fa fa-heart-o">  My Wishlist</i> </a> </li>
                                 <li><a href="#"><i class="fa fa-exchange">  My Orders</i> </a> </li>
                                 <li><a href="#"><i class="fa fa-check">  My Comments</i> </a> </li>

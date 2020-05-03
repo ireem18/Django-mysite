@@ -72,7 +72,7 @@
                         <div class="container" >
                             {% for rs in comments%}
                             <div style="border:1px solid pink,padding:5">
-                            <div><i class="fa fa-user-o"></i><b>{{rs.user}}</b></div>
+                            <div><i class="fa fa-user-o"></i><b>{{rs.user}} {{rs.name}}</b></div>
                             <div><i class="fa fa-clock-o"></i>{{rs.create_at}}</div>
                             <div style="color:pink"><h4>{{rs.subject}}</h4>
                                 <p>{{rs.comment}}</p>
@@ -92,10 +92,11 @@
                                 </div>
                             {% endfor %}
                         {% endif %}
-                        <p class=" " style="color:pink">E-posta hesabınız yayımlanmayacaktır...</p><br>
+                        <p class=" " style="color:pink">İsminizi paylaşmak zorunda degilsiniz...</p><br>
                         <form action="/product/addcomment/{{ product.id }}" method="post">
                             {% csrf_token %}
                             <div class="">
+                                <div class=""> <input class="mb-20"  name="name" style="width:100%" type="text" placeholder="Name"> </div>
                                 <div class=""> <input class="mb-20"  name="subject" style="width:100%" type="text" placeholder="Subject"> </div>
                                 <div class="">
                                     <textarea class="h-200x ptb-20"  name="comment" style="width:100%" placeholder="Message"></textarea></div>
