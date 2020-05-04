@@ -52,13 +52,16 @@
                              <h6 class="font-30 mt-20 mb-sm-40 left-text"><b>{{product.title}}</b></h6>
                              <h4  class="color-black">FİYAT = {{product.price}}</h4>
                              <p class="left-text" >{{product.description}}  </p>
-                            <div class="" >
-                                <button type="button" onclick="azalt()" >-</button>
-                                <input type="text" value="0" size="5" id="sayi" name="sayi">
-                                <button type="button" onclick="artir()">+</button>
-                            </div>
-                             <h6 class="dplay-inl-block mt-100"><a href="#" class="btn-fill-primary plr-25"><b>SİPARİŞ VER</b></a></h6>
-                             </div>
+                             <form action="/order/addtocart/{{ product.id }}" method="post">
+                                 {% csrf_token %}
+                                 <div class="" >
+                                    <span>Adet:</span>
+                                    <input name="quantity" class="input" type="number" min="0" max="{{product.amount}}" value="1">
+                                 </div>
+                                 <h6 class="dplay-inl-block mt-100"><button type="submit" class="btn-fill-primary plr-25"><i class="fa fa-shopping-cart" >SİPARİŞ VER</i></button></h6>
+                              </form>
+
+                         </div>
 
                     </div><!-- col-sm-6-->
 
@@ -96,7 +99,6 @@
                         <form action="/product/addcomment/{{ product.id }}" method="post">
                             {% csrf_token %}
                             <div class="">
-                                <div class=""> <input class="mb-20"  name="name" style="width:100%" type="text" placeholder="Name"> </div>
                                 <div class=""> <input class="mb-20"  name="subject" style="width:100%" type="text" placeholder="Subject"> </div>
                                 <div class="">
                                     <textarea class="h-200x ptb-20"  name="comment" style="width:100%" placeholder="Message"></textarea></div>
