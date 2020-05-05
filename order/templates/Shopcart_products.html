@@ -31,11 +31,19 @@
         <td><h4 class=""><a href="/product/{{rs.id}}/{{rs.slug}}">{{rs.product}}</a></h4></td>
         <td><a href="/category/{{rs.category.id}}/{{rs.category.slug}}">{{rs.product.category}}</a></td>
         <td><h4>{{rs.product.price}}TL</h4></td>
-        <td><h4>{{rs.amount}}TL</h4></td>
         <td><h4>{{rs.quantity}}</h4></td>
+        <td><h4>{{rs.amount}}TL</h4></td>
         <td><a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Are you sure?')"><i class="fa fa-close"></i> </a> </td>
     </tr>
+
     {% endfor %}
+    <tfoot>
+        <tr>
+            <th class="empty" colspan="4"></th>
+            <th>TOTAL</th>
+            <th>{{total}}TL</th>
+        </tr>
+    </tfoot>
 </table>
 <hr>
 {% endblock %}

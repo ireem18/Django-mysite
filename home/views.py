@@ -7,17 +7,19 @@ from django.shortcuts import render
 
 from home.forms import SearchForm, SignUpForm
 from home.models import Setting, ContactForm, ContactFormMessage
+from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
 
 
 def index(request):
+        current_user = request.user
         setting = Setting.objects.get(pk=2)
         sliderdata = Product.objects.all()[:3]
         category = Category.objects.all()
         dayproducts = Product.objects.all()[3:7]
         lastproducts = Product.objects.all().order_by('-id')[:4]
         randomproducts = Product.objects.all().order_by('?')[:4]
-
+        request.session['cart_items'] = ShopCart.objects.filter( user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
 
         context = {'setting':setting,
                    'category':category,

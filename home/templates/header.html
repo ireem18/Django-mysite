@@ -27,7 +27,13 @@
                                 <li><a href="/logout/"><i class="fa fa-unlock-alt">  Logout</i> </a> </li>
                             </ul>
                         </li>
-                    <li><a href="/shopcart"> <i class="fa fa-shopping-cart" ><strong> My Cart</strong></i></a></li>
+                    <li>
+                        <a href="/shopcart">
+                            <i class="fa fa-shopping-cart" ></i>
+                            <span class="qty">{{request.session.cart_items}}</span>
+                            <strong> My Cart</strong>
+                        </a>
+                    </li>
                           <div class="search-container" class="">
                                 <form action="/search/" method="post" > <!-- action search oldugu icin url eklememiz gerekiyor-->
                                         <!--
@@ -54,9 +60,20 @@
                         </div>
                 </ul>
 
-                <div class="clearfix"></div>
+
+                <div class="clearfix">
+                    {% if messages %}
+                        {% for message in messages %}
+                             <div class="alert alert-{{message.tags}}" role="alert">
+                                 {{message}}
+                             </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
         </div><!-- container -->
+
 </header>
+
 
 <script>
 

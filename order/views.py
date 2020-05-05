@@ -30,12 +30,16 @@ def addtocart(request, id):
                 data = ShopCart.objects.get(product_id=id)
                 data.quantity += form.cleaned_data['quantity']
                 data.save()
+                request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count() #sepetteki ürünlerin sayısını alıyoruz
+                messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
+                return HttpResponseRedirect(url)
             else: #urun yoksa ekle
                 data = ShopCart()
                 data.user_id = current_user.id
                 data.product_id = id
                 data.quantity = form.cleaned_data['quantity']
                 data.save()
+                request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count() #sepetteki ürünlerin sayısını alıyoruz
                 messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
                 return HttpResponseRedirect(url)
 
@@ -50,17 +54,17 @@ def addtocart(request, id):
             data.product_id = id
             data.quantity = 1
             data.save()
-            messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
-            return HttpResponseRedirect(url)
-
-    messages.warning(request, "Ürün sepete eklemede hata oluştu.Lütfen tekrar deneyiniz")
-    return HttpResponseRedirect(url)
+        request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
+        messages.warning(request, "Ürün sepete eklemede hata oluştu.Lütfen tekrar deneyiniz")
+        return HttpResponseRedirect(url)
 
 @login_required(login_url = '/login') #login olması gerekli
 def shopcart(request):
     category = Category.objects.all()
     current_user = request.user
     schopcart = ShopCart.objects.filter(user_id=current_user.id)
+    request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
+
     total = 0
     for rs in schopcart:
         total += rs.product.price * rs.quantity
@@ -75,4 +79,7 @@ def shopcart(request):
 def deletefromcart(request,id):
     ShopCart.objects.filter(id=id).delete()
     messages.success(request, "Ürün basarılı bir şekilde silindi")
+    current_user = request.user
+    request.session['cart_items'] = ShopCart.objects.filter( user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
+    messages.success(request,"Ürün basarılı bir sekilde silinmiştir")
     return HttpResponseRedirect("/shopcart")

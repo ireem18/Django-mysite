@@ -6,17 +6,17 @@
         <div class="w3-container">
                 <div class="heading">
                         <img class="heading-img" src="{% static 'images/heading_logo.png'%}" alt="">
-                        <h2>KATEGORİLER</h2>
+                        <h3>KATEGORİLER</h3>
                 </div>
                     <div class="sidenav w3-bar-block" style="margin-left:42%">
                         {% load mptt_tags %}
                          <ul class="anamenu">
                         {% recursetree category %}
-                            <li class=""  >
+                            <li>
                                 <a href="/category/{{ node.id }}/{{ node.slug }}" class="  w3-bar-item w3-button selecton  brdr-b-primary ">{{node.title}}</a>
                                 {% if not node.is_leaf_node %}
                                  <ul class="altmenu">
-                                     <li class=>
+                                     <li>
                                         <a  href="/category/{{ node.id }}/{{ node.slug }}">{{ children }}</a>
                                      </li>
                                  </ul>
@@ -66,7 +66,7 @@ body {
 
 .sidenav a:hover, .dropdown-btn:hover {
     background-color:white;
-    color:white;
+    color:#EF0031;
 }
 .main {
   margin-left: 200px; /* Same as the width of the sidenav */
