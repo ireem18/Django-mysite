@@ -30,14 +30,15 @@
                         {% include "user_panel.html" %} <!-- Html içerisinde html sayfası çağırmak için -->
                     </div>
                 </div><!-- col-sm-6-->
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-8 ">
                     <h3>USER INFORMATION</h3>
 
                     <table cellpadding="7" height="150px" width="400px" align="center">
                         <tr>
                                 <th></th>
-                                <td ><img style="width:90px;height:90px;textAlign: left;" src="{{profile.image.url}}"></td>
+                                <td ><img style="width:120px;height:120px;textAlign:left;border-radius:45px;margin-bottom:20px" src="{{profile.image.url}}"></td>
                         </tr>
+                        <hr>
                         <tr >
                             <th>Name:</th>
                             <td class="ml-20"> {{user.first_name}}</td>
@@ -56,6 +57,9 @@
                             <td class="ml-20"> {{user.email}}</td>
                         </tr>
                     </table>
+                    <h6 class="dplay-inl-block mt-30"><a href="/user/update" class="btn-fill-primary plr-15">UPDATE PROFILE</a></h6>
+                    <h6 class="dplay-inl-block mt-30"><a href="/user/password" class="btn-fill-primary secondary plr-15">CHANGE PASSWORD</a></h6>
+
                 </div><!--tab-style-1-->
                 </div><!-- row -->
         </div><!-- container -->
