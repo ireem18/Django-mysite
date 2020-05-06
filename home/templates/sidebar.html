@@ -13,7 +13,9 @@
                          <ul class="anamenu">
                         {% recursetree category %}
                             <li>
-                                <a href="/category/{{ node.id }}/{{ node.slug }}" class="  w3-bar-item w3-button selecton  brdr-b-primary ">{{node.title}}</a>
+                                <a href="/category/{{ node.id }}/{{ node.slug }}" class="  w3-bar-item w3-button selecton  brdr-b-primary ">
+                                    {{node.title}}
+                                </a>
                                 {% if not node.is_leaf_node %}
                                  <ul class="altmenu">
                                      <li>

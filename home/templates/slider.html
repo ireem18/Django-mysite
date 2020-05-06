@@ -1,6 +1,5 @@
 {% load static %}
 
-{% if page == 'home' %}
 {% for rs in sliderdata %}
 
 <images class="  h-700x main-slider  mySlides">
@@ -26,71 +25,6 @@
 
 {% endfor %}
 
-{% elif page == 'hakkimizda'%}
-<section class="bg-4 h-500x main-slider pos-relative">
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-                <div class="dplay-tbl">
-                        <div class="dplay-tbl-cell center-text color-white pt-90">
-                                <h5><b>THE BEST IN TOWN</b></h5>
-                                <h2 class="mt-30 mb-15">About our Pizzaria</h2>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
-</section>
-
-{% elif page == 'referanslar'%}
-<section class="bg-8 h-500x main-slider pos-relative">
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-                <div class="dplay-tbl">
-                        <div class="dplay-tbl-cell center-text color-white pt-90">
-                                <h5><b>THE BEST IN TOWN</b></h5>
-                                <h3 class="mt-30 mb-15">Our Referances</h3>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
-</section>
-
-{% elif page == 'iletisim'%}
-
-<section class="bg-6 h-500x main-slider pos-relative">
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-                <div class="dplay-tbl">
-                        <div class="dplay-tbl-cell center-text color-white pt-90">
-                                <h5><b>SAY HELLO</b></h5>
-                                <h3 class="mt-30 mb-15">Contact</h3>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
-</section>
-
-{% endif %}
-
-{% if page == 'products'%}
-
-<section class="bg-5 h-500x main-slider pos-relative">
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-                <div class="dplay-tbl">
-                        <div class="dplay-tbl-cell center-text color-white pt-90">
-                                <h2 class="mt-30 mb-15"></h2>
-                        </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-        </div><!-- container -->
-</section>
-
-{% endif %}
-
-{% if page == 'product_detail' %}
-<section class="bg-7 h-500x main-slider pos-relative">
-        <div class="triangle-up pos-bottom"></div>
-        <div class="container h-100">
-
-        </div><!-- container -->
-</section>
-{% endif %}
 
 <script>
 var slideIndex = 1;
@@ -112,3 +46,4 @@ function showDivs(n) {
 }
 </script>
 
+<style></style>

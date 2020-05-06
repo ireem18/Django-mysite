@@ -1,0 +1,110 @@
+{% extends "homebase.html" %}
+
+{% block title %} User {{ user }} {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+{% load static %}
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="mt-50">
+<section class="story-area left-text center-sm-text mt-50" >
+    <div class="heading">
+            <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+    </div>
+
+
+
+<section class="story-area  center-sm-text pt-0">
+        <div class="container">
+            <div class="">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h4><b>SHIPPING DETAILS</b></h4>
+                    </div>
+                    <p><label for="id_first_name">First name:</label>
+                        <input type="text" name="first_name" value="{{user.first_name}}" class="input" maxlength="10" style="color:black"></p>
+                    <p><label for="id_last_name">Last name:</label>
+                        <input type="text" name="last_name" value="{{user.last_name}}" class="input" maxlength="10" style="color:black"></p>
+                    <p><label for="id_masa_no">Masa No:</label>
+
+                        <input type="text" name="masa_no" value="{{profile.masa_no}}" class="input" maxlength="10" style="color:black"></p>
+                    <h6 class="mt-40 center-text"><button type="submit"  class="btn-primaryc plr-40"><b> ORDER</b></button></h6>
+
+                </form>
+            </div><!-- row -->
+        </div><!-- container -->
+</section>
+<hr>
+
+<table cellpadding="4" width="1200" height="200" style="margin:30px">
+    <tr>
+        <th style="color:#EF0031">Image</th>
+        <th style="color:#EF0031">Product Name</th>
+        <th style="color:#EF0031">Category</th>
+        <th style="color:#EF0031">Price</th>
+        <th style="color:#EF0031">Amount</th>
+        <th style="color:#EF0031">Quantity</th>
+    </tr>
+    <hr>
+    {% for rs in schopcart %}
+    <tr>
+        <td class=""><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{rs.product.image.url}}" style="width:90px" > </a></td>
+        <td><h4 class=""><a href="/product/{{rs.id}}/{{rs.slug}}">{{rs.product}}</a></h4></td>
+        <td><a href="/category/{{rs.category.id}}/{{rs.category.slug}}">{{rs.product.category}}</a></td>
+        <td><h4>{{rs.product.price}}TL</h4></td>
+        <td><h4>{{rs.quantity}}</h4></td>
+        <td><h4>{{rs.amount}}TL</h4></td>
+    </tr>
+
+    {% endfor %}
+    <tfoot>
+        <tr>
+            <th class="empty" colspan="4"></th>
+            <th>TOTAL</th>
+            <th>{{total}}TL</th>
+        </tr>
+
+    </tfoot>
+</table>
+
+
+
+</section>
+</div>
+
+
+
+{% endblock %}
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>

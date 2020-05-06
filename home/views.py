@@ -34,16 +34,20 @@ def index(request):
 def hakkimizda(request):
         setting = Setting.objects.get(pk=2)
         category = Category.objects.all()
+        sliderdata = Product.objects.all()[:3]
         context = {'setting':setting,
                    'category': category,
+                   'sliderdata': sliderdata,
                    'page':'hakkimizda'}
         return render(request, 'hakkimizda.html',context)
 
 def referanslar(request):
         setting = Setting.objects.get(pk=2)
         category = Category.objects.all()
+        sliderdata = Product.objects.all()[:3]
         context = {'setting':setting,
                    'category': category,
+                   'sliderdata': sliderdata,
                    'page':'referanslar'}
         return render(request, 'referanslarimiz.html',context)
 
@@ -64,8 +68,10 @@ def iletisim(request):
         setting = Setting.objects.get(pk=2)
         form = ContactForm()
         category = Category.objects.all()
+        sliderdata = Product.objects.all()[:3]
         context = {'setting':setting,
                    'category': category,
+                   'sliderdata': sliderdata,
                    'form': form}
         return render(request, 'iletisim.html',context)
 
@@ -84,8 +90,10 @@ def products(request):
         category = Category.objects.all()
         products = Product.objects.all()
         setting = Setting.objects.get(pk=2)
+        sliderdata = Product.objects.all()[:3]
         context = { 'products': products,
                    'category': category,
+                    'sliderdata': sliderdata,
                     'page':'products'}
         return render(request, 'products.html',context)
 
@@ -95,10 +103,12 @@ def product_detail(request,id,slug):
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
     comments = Comment.objects.filter(product_id=id,status='True')
+    sliderdata = Product.objects.all()[:3]
     context = {'page':'product_detail',
                'category': category,
                'product': product,
                'images': images,
+               'sliderdata': sliderdata,
                'comments': comments}
     return render(request,'product_detail.html',context)
 

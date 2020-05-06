@@ -72,7 +72,7 @@ class Product(models.Model):
     image_tag.short_description = 'Images'
 
     def get_absolute_url(self):
-        return reverse('category_detail', kwards = {'slug':self.slug})
+        return reverse('category_detail', kwards={'slug': self.slug})
 
 class Images(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
