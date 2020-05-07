@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %} User {{ user }} {% endblock %}
+{% block title %} Order List  {% endblock %}
 {% block keywords %} {{ setting.keywords }}  {% endblock %}
 {% block descriptions %} {{ setting.description }} {% endblock %}
 {% load static %}
@@ -14,11 +14,19 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="mt-50">
+
 <section class="story-area left-text center-sm-text mt-50" >
+    <h3 class="font-9 mt-30 ml-30  left-text">
+        <ul class="row">
+            <li><a href="/">ANASAYFA>> </a></li>
+            <li class="active">User Orders</li>
+        </ul>
+    </h3 >
     <div class="heading">
             <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
-            <h3>USER INFORMATION</h3>
+            <h3 class=" mb-30">USER ORDER LIST</h3>
 
     </div>
 
@@ -27,39 +35,37 @@
 <section class="story-area left-text center-sm-text pt-0">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-3">
                     <div class="row-md-4">
                         {% include "user_panel.html" %} <!-- Html içerisinde html sayfası çağırmak için -->
                     </div>
                 </div><!-- col-sm-6-->
-                <div class="col-md-12 col-lg-8 ">
-
-                    <table cellpadding="7" height="150px" width="400px" align="center">
+                <div class="col-md-12 col-lg-9 ">
+                    <table cellpadding="4" width="800" height="200" style="margin:30px">
                         <tr>
-                                <th></th>
-                                <td ><img style="width:120px;height:120px;textAlign:left;border-radius:45px;margin-bottom:20px" src="{{profile.image.url}}"></td>
+                            <th class="text-left">Id</th>
+                            <th class="text-left">First Name</th>
+                            <th class="text-left">Last Name</th>
+                            <th class="text-left">Total</th>
+                            <th class="text-left">Status</th>
+                            <th class="text-left">Date</th>
+                            <th class="text-left">Detail</th>
                         </tr>
-                        <hr>
+                        {% for rs in orders %}
                         <tr >
-                            <th>Name:</th>
-                            <td class="ml-20"> {{user.first_name}}</td>
-                        </tr>
-                       <tr >
-                            <th>Surname:</th>
-                            <td class="ml-20"> {{user.last_name}}</td>
+                            <td class="text-left">{{ rs.id }} </td>
+                            <td class="text-left">{{ rs.first_name }} </td>
+                            <td class="text-left">{{ rs.last_name }} </td>
+                            <td class="text-left">{{ rs.total }} </td>
+                            <td class="text-left">{{ rs.status }} </td>
+                            <td class="text-left">{{ rs.create_at }} </td>
+                            <td class="text-left"><a class="btn-fill-primary secondary plr-10" href="/user/orderdetail/{{ rs.id }}">Detay</a> </td>
                         </tr>
 
-                        <tr >
-                            <th>Table No:</th>
-                            <td class="ml-20"> {{profile.masa_no}}</td>
-                        </tr>
-                        <tr >
-                            <th>E-mail Address:</th>
-                            <td class="ml-20"> {{user.email}}</td>
-                        </tr>
-                    </table>
-                    <h6 class="dplay-inl-block mt-30"><a href="/user/update" class="btn-fill-primary plr-15">UPDATE PROFILE</a></h6>
-                    <h6 class="dplay-inl-block mt-30"><a href="/user/password" class="btn-fill-primary secondary plr-15">CHANGE PASSWORD</a></h6>
+                        {% endfor %}
+
+                        </table>
+
 
                 </div><!--tab-style-1-->
                 </div><!-- row -->

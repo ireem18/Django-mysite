@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 from home.models import UserProfile
+from order.models import Order, OrderProduct
 from product.models import Category
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -17,6 +19,8 @@ def index(request):
                'profile':profile}
     return render(request, 'user_profile.html', context)
 
+
+@login_required(login_url = '/login') #lgin olması gerekli
 def user_update(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance = request.user)
@@ -37,6 +41,7 @@ def user_update(request):
         }
         return render(request,'user_update.html',context)
 
+@login_required(login_url = '/login') #lgin olması gerekli
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user,request.POST)
@@ -55,3 +60,27 @@ def change_password(request):
             'form':form,
             'category':category
         })
+
+@login_required(login_url = '/login') #lgin olması gerekli
+def orders(request):
+    category = Category.objects.all()
+    current_user = request.user
+    orders = Order.objects.filter(user_id=current_user.id)
+    context = {
+        'category':category,
+        'orders':orders
+    }
+    return render(request,'user_orders.html',context)
+
+@login_required(login_url = '/login') #lgin olması gerekli
+def orderdetail(request,id): #return HttpResponse(str(id)) Id nin gidip gitmedigini test ettik
+    category = Category.objects.all()
+    current_user = request.user
+    order = Order.objects.get(user_id=current_user.id, id=id)
+    orderitems = OrderProduct.objects.filter(order_id=id)
+    context = {
+        'category':category,
+        'order':order,
+        'orderitems':orderitems
+    }
+    return render(request,'user_order_detail.html',context)

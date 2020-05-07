@@ -1,0 +1,145 @@
+{% extends "homebase.html" %}
+
+{% block title %} Order Detail  {% endblock %}
+{% block keywords %} {{ setting.keywords }}  {% endblock %}
+{% block descriptions %} {{ setting.description }} {% endblock %}
+{% load static %}
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+{% endblock %}
+
+{% block slider %}
+    {% include 'slider.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mt-50">
+
+<section class="story-area left-text center-sm-text mt-50" >
+    <h3 class="font-9 mt-30 ml-30  left-text">
+        <ul class="row">
+            <li><a href="/">ANASAYFA>> </a></li>
+            <li class="active">Order Detail</li>
+        </ul>
+    </h3 >
+    <div class="heading">
+            <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+
+    </div>
+
+
+
+<section class="story-area left-text center-sm-text pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-3">
+                    <div class="row-md-4">
+                        {% include "user_panel.html" %} <!-- Html içerisinde html sayfası çağırmak için -->
+                    </div>
+                </div><!-- col-sm-6-->
+                <div class="col-md-12 col-lg-9 ">
+                    <h3 class=" mb-30">ORDER SHIPPING INFORMATION</h3>
+                    <table cellpadding="7" height="200px" width="600px" align="center">
+                        <tr >
+                            <th>Name:</th>
+                            <td class="ml-20"> {{order.first_name}}</td>
+                        </tr>
+                       <tr >
+                            <th>Surname:</th>
+                            <td class="ml-20"> {{order.last_name}}</td>
+                        </tr>
+
+                        <tr >
+                            <th>Table No:</th>
+                            <td class="ml-20"> {{order.masa_no}}</td>
+                        </tr>
+                       <tr >
+                            <th>Status:</th>
+                            <td class="ml-20"> {{order.status}}</td>
+                        </tr>
+                       <tr >
+                            <th>Date</th>
+                            <td class="ml-20"> {{order.create_at}}</td>
+                        </tr>
+                        <tr >
+                            <th>Shipping Inf</th>
+                            <td class="ml-20"> {{order.adminnote}}</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h3 class=" mt-30">ORDER ITEM LIST</h3>
+                    <table cellpadding="4" width="800" height="300" style="margin:30px">
+                        <tr>
+                            <th class="text-left " style="color:green">Product</th>
+                            <th class="text-left" style="color:green">Product Name</th>
+                            <th class="text-left" style="color:green">Price</th>
+                                <th class="text-left" style="color:green">Quantity</th>
+                            <th class="text-left" style="color:green">Amount</th>
+                            <th class="text-left" style="color:green">Status</th>
+                            <th class="text-left" style="color:green">Date</th>
+
+                        </tr>
+                        {% for rs in orderitems %}
+                        <tr >
+                            <td class="text-left">
+                                <a href="/product/{{rs.product_id}}/{{ rs.product.slug}}">
+                                    <img src="{{rs.product.image.url}}" style="height:50px;width:50px">
+                                </a>
+                            </td>
+                            <td class="text-left">
+                                <a href="/product/{{rs.product_id}}/{{ rs.product.slug}}">
+                                    {{ rs.product.title }}
+                                </a>
+                            </td>
+                            <td class="text-left">{{ rs.price }} </td>
+                            <td class="text-left">{{ rs.quantity }} </td>
+                            <td class="text-left">{{ rs.amount }} </td>
+                            <td class="text-left">{{ rs.status }} </td>
+                            <td class="text-left">{{ rs.create_at }} </td>
+                        </tr>
+                        {% endfor %}
+
+                        </table>
+
+
+                </div><!--tab-style-1-->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+
+
+
+
+</section>
+</div>
+
+
+
+{% endblock %}
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
