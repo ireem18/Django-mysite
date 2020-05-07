@@ -27,7 +27,7 @@
     <hr>
     {% for rs in schopcart %}
     <tr>
-        <td class=""><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{rs.product.image.url}}" style="width:90px" > </a></td>
+        <td class=""><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{rs.product.image.url}}" style="width:90px;border-radius:50%" > </a></td>
         <td><h4 class=""><a href="/product/{{rs.id}}/{{rs.slug}}">{{rs.product}}</a></h4></td>
         <td><a href="/category/{{rs.category.id}}/{{rs.category.slug}}">{{rs.product.category}}</a></td>
         <td><h4>{{rs.product.price}}TL</h4></td>
