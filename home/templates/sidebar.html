@@ -1,6 +1,6 @@
 {% load static %}
-
- <section class="story-area left-text center-sm-text pos-relative">
+<!--
+ <section class="story-area left-text center-sm-text pos-relative mt-40">
         <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
         <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
         <div class="w3-container">
@@ -28,10 +28,77 @@
                          </ul>
                     </div>
 
-                </div><!-- row -->
+                </div>
             </div>
+        </div>
+</section>
+-->
+<div class="mt-50">
+<section class="story-area left-text center-sm-text mt-50" >
+    <div class="heading">
+            <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+            <h3>OUR STORY</h3>
+    </div>
+
+
+
+<section class="story-area left-text center-sm-text pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="row-md-4">
+
+                        <div class="sidenav w3-bar-block" >
+                        {% load mptt_tags %}
+                         <ul class="anamenu">
+                        {% recursetree category %}
+                            <li>
+                                <a href="/category/{{ node.id }}/{{ node.slug }}" class="  w3-bar-item w3-button selecton  brdr-b-primary ">
+                                    {{node.title}}
+                                </a>
+                                {% if not node.is_leaf_node %}
+                                 <ul class="altmenu">
+                                     <li>
+                                        <a  href="/category/{{ node.id }}/{{ node.slug }}">{{ children }}</a>
+                                     </li>
+                                 </ul>
+                                {% endif %}
+                            </li>
+                         {% endrecursetree %}
+                         </ul>
+                    </div>
+
+                    </div>
+                </div><!-- col-sm-6-->
+                <div class="col-md-12 col-lg-8 ">
+                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse
+                                        platea dictumst. Morbi maximus
+                                        lobortis ipsum, ut blandit augue ullamcorper vitae.
+                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis
+                                        massa. Morbi tellus
+                                        tortor, luctus et lacinia non, tincidunt in lacus.
+                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id
+                                        dapibus dolor, ac
+                                        cursus nulla. </p>
+                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea
+                                        dictumst.Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae.
+                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel
+                                        convallismassa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus.
+                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulumidda
+                                        pibus dolor, accursus nulla. </p>
+
+                </div><!--tab-style-1-->
+                </div><!-- row -->
         </div><!-- container -->
 </section>
+
+
+
+
+
+</section>
+</div>
+
 
 <style>
 body {
@@ -102,13 +169,16 @@ body {
 }
 .anamenu li:hover .altmenu {
   display: block;
-  max-height: 200px;
+  max-height: 130px;
+
 }
 .altmenu a{
   background-color:white;
+
 }
 .altmenu a:hover {
   background-color:white;
+
 }
 .altmenu {
   overflow: hidden;

@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.utils.crypto import get_random_string
 
-from home.models import UserProfile
+from home.models import UserProfile, Setting
 from order.models import ShopCartForm, ShopCart, OrderForm, Order, OrderProduct
 from product.models import Category, Product
 
@@ -33,18 +33,15 @@ def addtocart(request, id):
                 data = ShopCart.objects.get(product_id=id)
                 data.quantity += form.cleaned_data['quantity']
                 data.save()
-                request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count() #sepetteki ürünlerin sayısını alıyoruz
-                messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
-                return HttpResponseRedirect(url)
             else: #urun yoksa ekle
                 data = ShopCart()
                 data.user_id = current_user.id
                 data.product_id = id
                 data.quantity = form.cleaned_data['quantity']
                 data.save()
-                request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count() #sepetteki ürünlerin sayısını alıyoruz
-                messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
-                return HttpResponseRedirect(url)
+            request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count() #sepetteki ürünlerin sayısını alıyoruz
+            messages.success(request, "Ürün basarılı bir şekilde eklenmiştir")
+            return HttpResponseRedirect(url)
 
     else: #eger post işlemi yoksa sadece id ile gönderim varsa
         if control == 1:
@@ -63,6 +60,7 @@ def addtocart(request, id):
 
 @login_required(login_url = '/login') #login olması gerekli
 def shopcart(request):
+    setting = Setting.objects.get(pk=2)
     category = Category.objects.all()
     current_user = request.user
     schopcart = ShopCart.objects.filter(user_id=current_user.id)
@@ -74,7 +72,8 @@ def shopcart(request):
 
     context = { 'schopcart': schopcart,
                 'category': category,
-                'total' : total }
+                'total' : total,
+                'setting': setting}
     return render(request, 'Shopcart_products.html', context)
 
 
@@ -89,6 +88,7 @@ def deletefromcart(request,id):
 
 @login_required(login_url = '/login') #lgin olması gerekli
 def orderproduct(request):
+    setting = Setting.objects.get(pk=2)
     category = Category.objects.all()
     current_user = request.user
     schopcart = ShopCart.objects.filter(user_id = current_user.id)
@@ -141,5 +141,6 @@ def orderproduct(request):
                'total':total,
                'form':form,
                'profile':profile,
+               'setting': setting
                }
     return render(request,'Order_Form.html',context)

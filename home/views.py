@@ -71,7 +71,6 @@ def iletisim(request):
         sliderdata = Product.objects.all()[:3]
         context = {'setting':setting,
                    'category': category,
-                   'sliderdata': sliderdata,
                    'form': form}
         return render(request, 'iletisim.html',context)
 
@@ -79,10 +78,13 @@ def category_products(request,id,slug):
         category = Category.objects.all()
         products = Product.objects.filter(category_id=id)
         categoryData = Category.objects.get(pk=id)
+        setting = Setting.objects.get(pk=2)
+
         context = {'products': products,
                    'category': category,
                    'categoryData': categoryData,
-                   'page': 'products'
+                   'page': 'products',
+                   'setting': setting
                    }
         return render(request, 'products.html', context)
 
@@ -94,7 +96,8 @@ def products(request):
         context = { 'products': products,
                    'category': category,
                     'sliderdata': sliderdata,
-                    'page':'products'}
+                    'page':'products',
+                    'setting':setting}
         return render(request, 'products.html',context)
 
 def product_detail(request,id,slug):
@@ -102,17 +105,19 @@ def product_detail(request,id,slug):
     images = Images.objects.filter(product_id = id)
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
+    setting = Setting.objects.get(pk=2)
     comments = Comment.objects.filter(product_id=id,status='True')
     sliderdata = Product.objects.all()[:3]
     context = {'page':'product_detail',
                'category': category,
                'product': product,
                'images': images,
-               'sliderdata': sliderdata,
-               'comments': comments}
+               'comments': comments,
+               'setting':setting}
     return render(request,'product_detail.html',context)
 
 def product_search(request):
+    setting = Setting.objects.get(pk=2)
     if request.method == 'POST': #Check form post
         form = SearchForm(request.POST)
         if form.is_valid():
@@ -126,7 +131,9 @@ def product_search(request):
             products = Product.objects.filter(title__icontains=query)
 
             context = {'products':products,
-                       'category':category,}
+                       'category':category,
+                       'setting': setting
+                       }
             return render(request, 'products_search.html', context)
         return HttpResponseRedirect('/')
 
@@ -150,6 +157,7 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 def login_view(request):
+    setting = Setting.objects.get(pk=2)
     if request.method == 'POST': #Check form post
         username = request.POST['username']
         password = request.POST['password']
@@ -161,10 +169,13 @@ def login_view(request):
             messages.warning(request, "Login Hatası! Kullanıcı adı ya da Şifre yanlış")
             return HttpResponseRedirect('/login')
     category = Category.objects.all()
-    context = {'category': category, }
+    context = {'category': category,
+               'setting': setting
+               }
     return render(request, 'login.html', context)
 
 def signup_view(request):
+    setting = Setting.objects.get(pk=2)
     if request.method == 'POST': #Check form post
         form = SignUpForm(request.POST)
         if form.is_valid(): #Formdaki kontrolleri yapar
@@ -178,5 +189,6 @@ def signup_view(request):
     category = Category.objects.all()
     context = {'category': category,
                'form': form,
+               'setting': setting
                }
     return render(request, 'signup.html', context)

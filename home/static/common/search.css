@@ -41,10 +41,11 @@ body {
     float: none;
     display: table;
     text-align: left;
-    width: 40;
+    width: 30;
     margin: 0;
     padding: 14px;
 clear:both;
+position:fixed;
   }
  input[type=text] {
 
