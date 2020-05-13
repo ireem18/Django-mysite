@@ -1,0 +1,51 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block title %} Sıkca Sorulan Sorular{% endblock %}
+{% block keywords %}   {% endblock %}
+{% block descriptions %}  {% endblock %}
+
+{% block head %}
+    <link rel = 'shortcut icon' type = 'images/icon.jpeg' href = '{{setting.icon.url}}' />
+<script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+ </script>
+{% endblock %}
+
+
+{% block content %}
+
+<section class="story-area left-text center-sm-text mt-40 m-40">
+    <h3 class="font-9 mt-40 ml-30">
+        <ul class="row">
+            <li><a href="/">ANASAYFA>> </a></li>
+            <li class="active">Sıkca Sorulan Sorular </li>
+        </ul>
+    </h3 >
+
+<div id="accordion" class="m-50">
+    {% for rs in faq %}
+    <h3> {{ rs.question }} </h3>
+    <div>
+        <p> {{ rs.answer }} </p>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+<!--
+<table cellpadding="3" width="1200" style="margin:30px">
+    {% for rs in faq %}
+        <tr>
+            <th> {{rs.question}} </th>
+        </tr>
+        <tr>
+            <td>{{ rs.answer }}</td>
+        </tr>
+    {% endfor %}
+</table>
+    -->
+</section>
+{% endblock %}

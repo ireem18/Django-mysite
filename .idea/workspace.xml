@@ -2,48 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a486dea1-732a-4d90-b3e0-35f01fcee1bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/static/images/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/Tavuklu-Sezar-Salatası.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/tavuk2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/tavuk3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/tavuklu-salata.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/Tavuklu-Sezar-Salatası.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/cay2_bz7ttTe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/cay3_0dfmOcg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/cay3_rMVoLLg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/cay_vsxucfX.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/drink-1_9RNuHYb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/drink-1_MhVNrLh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/drink-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/kahve2_aUMlanl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/kahve3_ITnhZRR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/kahve3_wTJi9dG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/kahve4_csPpTL2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/sidebar-5-200x200_bz5T6RW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/tavuk2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/tavuk3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/tavuklu-salata.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/3_UBuGve4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/Ekran_Alıtısı.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/bg-01_UWWrrtI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/gallery-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/gallery-2_IvAE43L.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0008_faq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0009_auto_20200513_2332.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0010_auto_20200513_2334.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0011_auto_20200513_2335.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0012_faq_ordernumber.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/faq.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,17 +45,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Django\mysite\user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\mysite\home\templates" />
       <recent name="C:\Django\mysite\user\templates" />
       <recent name="C:\Django\mysite\user\migrations" />
-      <recent name="C:\Django\mysite\home\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Django\mysite\user" />
     </key>
   </component>
   <component name="ServiceViewManager">

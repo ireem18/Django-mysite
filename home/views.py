@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 from home.forms import SearchForm, SignUpForm
-from home.models import Setting, ContactForm, ContactFormMessage
+from home.models import Setting, ContactForm, ContactFormMessage, FAQ
 from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
 
@@ -106,7 +106,7 @@ def product_detail(request,id,slug):
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
     if product.status != 'True':
-        messages.warning(request, "Ürün suan bulunamıyor.Lütfen başka bir ürün terci ediniz....")
+        messages.warning(request, "Ürün suan bulunamıyor.Lütfen başka bir ürün tercih ediniz....")
         return HttpResponseRedirect('/')
     setting = Setting.objects.get(pk=2)
     comments = Comment.objects.filter(product_id=id,status='True')
@@ -196,3 +196,15 @@ def signup_view(request):
                'setting': setting
                }
     return render(request, 'signup.html', context)
+
+def faq(request):
+    setting = Setting.objects.get(pk=2)
+    category = Category.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {
+        'category': category,
+        'faq': faq,
+        'setting': setting
+    }
+    return render(request, 'faq.html', context)
+
