@@ -10,7 +10,7 @@ class ShopCart(models.Model):
     quantity = models.IntegerField() #Kac adet olacagı
 
     def __str__(self):
-        return self.product
+        return self.product.title
 
     @property
     def amount(self):

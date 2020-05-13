@@ -2,27 +2,27 @@
 <footer class="pb-50  pt-70 pos-relative">
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
-                <a href="index.html"><img src="{% static 'images/logo-white.png' %}" alt="Logo"></a>
+                <a href="/"><img src="{% static 'images/logo-white.png' %}" alt="Logo"></a>
 
                 <div class="pt-30">
                         <p class="underline-secondary"><b>Address:</b></p>
-                        <p>Büyükdere Caddesi No 245 USO Center Çankaya,Ankara </p>
+                        <p>{{setting.address}} </p>
                 </div>
 
                 <div class="pt-30">
                         <p class="underline-secondary mb-10"><b>Phone:</b></p>
-                        <a href="tel:+53 345 7953 32453 ">+53 345 7953 32453 </a>
+                        <a href="tel:+53 345 7953 32453 ">{{setting.phone}}</a>
                 </div>
 
                 <div class="pt-30">
                         <p class="underline-secondary mb-10"><b>Email:</b></p>
-                        <a href="mailto:iremmdemiroz@gmail.com"> iremmdemiroz@gmail.com</a>
+                        <a href="mailto:iremmdemiroz@gmail.com"> {{ setting.email }}</a>
                 </div>
 
                 <ul class="icon mt-30">
-                        <li><a href="https://twitter.com/iremdemiroz_"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="https://github.com/ireem18"><i class="ion-social-github"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/irem-demir%C3%B6z-80998517b/"><i class="ion-social-linkedin"></i></a></li>
+                        <li><a href="{{setting.twitter}}"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="{{setting.facebook}}"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="{{setting.instagram}}"><i class="ion-social-instagram"></i></a></li>
                 </ul>
 
 

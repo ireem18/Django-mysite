@@ -17,8 +17,8 @@ def index(request):
         sliderdata = Product.objects.all()[:3]
         category = Category.objects.all()
         dayproducts = Product.objects.all()[3:7]
-        lastproducts = Product.objects.all().order_by('-id')[:4]
-        randomproducts = Product.objects.all().order_by('?')[:4]
+        lastproducts = Product.objects.filter(status='True').order_by('-id')[:4]
+        randomproducts = Product.objects.filter(status='True').order_by('?')[:4]
         request.session['cart_items'] = ShopCart.objects.filter( user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
 
         context = {'setting':setting,
@@ -90,7 +90,7 @@ def category_products(request,id,slug):
 
 def products(request):
         category = Category.objects.all()
-        products = Product.objects.all()
+        products = Product.objects.filter(status='True')
         setting = Setting.objects.get(pk=2)
         sliderdata = Product.objects.all()[:3]
         context = { 'products': products,
@@ -105,6 +105,9 @@ def product_detail(request,id,slug):
     images = Images.objects.filter(product_id = id)
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
+    if product.status != 'True':
+        messages.warning(request, "Ürün suan bulunamıyor.Lütfen başka bir ürün terci ediniz....")
+        return HttpResponseRedirect('/')
     setting = Setting.objects.get(pk=2)
     comments = Comment.objects.filter(product_id=id,status='True')
     sliderdata = Product.objects.all()[:3]
@@ -185,6 +188,7 @@ def signup_view(request):
             user = authenticate(username=username, password=password)
             login(request,user)
             return HttpResponseRedirect('/')
+
     form = SignUpForm()
     category = Category.objects.all()
     context = {'category': category,
