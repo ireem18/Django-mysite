@@ -181,7 +181,7 @@ def signup_view(request):
     setting = Setting.objects.get(pk=2)
     if request.method == 'POST': #Check form post
         form = SignUpForm(request.POST)
-        if form.is_valid(): #Formdaki kontrolleri yapar
+        if form.is_valid(): #Formdaki kontrolleri yapar.Tum form elemeanları dolu mu
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
@@ -200,7 +200,7 @@ def signup_view(request):
 def faq(request):
     setting = Setting.objects.get(pk=2)
     category = Category.objects.all()
-    faq = FAQ.objects.all().order_by('ordernumber')
+    faq = FAQ.objects.filter(status ='True').order_by('ordernumber')
     context = {
         'category': category,
         'faq': faq,

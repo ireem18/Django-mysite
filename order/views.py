@@ -65,7 +65,6 @@ def shopcart(request):
     current_user = request.user
     schopcart = ShopCart.objects.filter(user_id=current_user.id)
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
-
     total = 0
     for rs in schopcart:
         total += rs.product.price * rs.quantity
