@@ -17,8 +17,8 @@ def index(request):
         sliderdata = Product.objects.all()[:3]
         category = Category.objects.all()
         dayproducts = Product.objects.all()[3:7]
-        lastproducts = Product.objects.filter(status='True').order_by('-id')[:4]
-        randomproducts = Product.objects.filter(status='True').order_by('?')[:4]
+        lastproducts = Product.objects.filter(status='True').order_by('-id')[:4] #urun listesinin sonundan 4 urun secer
+        randomproducts = Product.objects.filter(status='True').order_by('?')[:4] #rastgele urun dondurmek icin
         request.session['cart_items'] = ShopCart.objects.filter( user_id=current_user.id).count()  # sepetteki ürünlerin sayısını alıyoruz
 
         context = {'setting':setting,

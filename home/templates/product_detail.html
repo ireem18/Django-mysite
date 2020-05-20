@@ -47,7 +47,7 @@
                     <div class="col-md-12 col-lg-6">
                          <div class="col-sm-6">
                              <h6 class="font-30 mt-20 mb-sm-40 left-text"><b>{{product.title}}</b></h6>
-                             <h4  class="color-black">FİYAT = {{product.price}}</h4>
+                             <h4  class="color-black">FİYAT = {{product.price}} TL</h4>
                              <p class="left-text" >{{product.description}}  </p>
                              <form action="/order/addtocart/{{ product.id }}" method="post">
                                  {% csrf_token %}
@@ -68,7 +68,7 @@
                      <div class="w3-container">
                      <div class="row">
                     <div class="col-md-12 col-lg-6 ">
-                    <h4>YORUMLAR</h4>
+                    <h4><b>YORUMLAR</b></h4>
                         <div class="container" >
                             {% for rs in comments%}
                             <div style="border:1px solid pink,padding:5">
@@ -84,7 +84,7 @@
                     </div><!--col-sm-6-->
 
                     <div class="col-md-12 col-lg-6">
-                        <h4>YORUMUNU GÖNDER</h4>
+                        <h4><b>YORUMUNU GÖNDER</b></h4>
                         {% if messages %}
                             {% for message in messages %}
                                 <div class="alert alert-{{message.tags}}" role="alert">
@@ -112,7 +112,7 @@
                             {% if user.id is not None %}
                             <h6 class="center-text mtb-30"><button href="#" class="btn-primaryc plr-25"><b>MESAJINI GÖNDER</b></button></h6>
                             {% else %}
-                                Yorum elemek için login olunuz!
+                                Yorum eklemek için login olunuz!
                             {% endif %}
                         </form>
 

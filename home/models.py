@@ -60,8 +60,8 @@ class ContactFormMessage(models.Model):
 
 class ContactForm(ModelForm):
     class Meta:
-        model = ContactFormMessage
-        fields = ['name', 'email', 'subject', 'message']
+        model = ContactFormMessage #hangi modele ait oldugu
+        fields = ['name', 'email', 'subject', 'message'] #formda hangi elemanlar gozukecekse
         widgets = {
             'name' : TextInput(attrs={'class':'mb-20', 'placeholder':'Name & Surname'}),
             'subject' : TextInput(attrs={'class':'mb-20', 'placeholder':'Subject'}),

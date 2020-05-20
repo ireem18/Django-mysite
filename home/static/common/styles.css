@@ -1067,7 +1067,7 @@ section {
 /*FORM*/
 
 .form-style-1 textarea,
-.form-style-1 input{ display: block; width: 100%; padding: 0 20px;  border: 0px; border-bottom: 3px solid transparent; background: #EFF6F7; height: 50px;
+.form-style-1 input{ display: block; width: 90%; padding: 0 20px;  border: 0px; border-bottom: 3px solid transparent; background: #EFF6F7; height: 50px;
         outline: 0; -webkit-transition: all .2s ease-in;  transition: all .2s ease-in; }
 
 .form-style-1 textarea:focus,
@@ -7357,3 +7357,4 @@ ul.icon li a{ padding: 10px;  }
 width:20px;
 background:transparent;
 }
+

@@ -31,7 +31,7 @@
         {% endif %}
 
         <form class="form-style-1 placeholder-1"  action="" method="post" >
-            {% csrf_token %}
+            {% csrf_token %} <!--Guvenlik tedbiri alıyor -->
             {{ form.as_p}}
             <h6 class="center-text mtb-30"><button class="btn-primaryc plr-25" type="submit" style="width:200px"/>SEND FORM</h6>
         </form>
