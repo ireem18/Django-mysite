@@ -8,6 +8,7 @@ body {
 .search-container {
   float: center;
   background:transparent;
+
 }
 
 .search-container input[type=text] {
@@ -15,8 +16,8 @@ body {
   font-size: 15px;
   border:none;
   background:transparent;
-  color:white;
-  width:150px;
+  color:black;
+  width:300px;
 }
 
 .search-container .search-container button {
@@ -24,14 +25,15 @@ body {
   padding: 6px;
   margin-top: 8px;
   margin-right: 16px;
-  font-size: 15px;
+  font-size: 17px;
   border: none;
   background:transparent;
   cursor: pointer;
+
 }
 
 .search-container .search-container button:hover {
-  background: #ccc;
+  background: black;
 }
 
 @media screen and (max-width: 600px) {
@@ -45,6 +47,7 @@ body {
     margin: 0;
     padding: 14px;
     background:transparent;
+    color:black;
   }
   .search-container input[type=text] {
     border: 1px solid #ccc;

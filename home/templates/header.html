@@ -34,30 +34,6 @@
                             <strong> </strong>
                         </a>
                     </li>
-                          <div class="search-container">
-                                <form action="/search/" method="post" > <!-- action search oldugu icin url eklememiz gerekiyor-->
-                                        <!--
-                                        {% load mptt_tags %}
-                                        <select name="catid" class="input"  style="background:transparent;color:#EF0031;">
-                                            <option value="0">Kategoriler</option>
-                                            {% recursetree category %}
-                                                {% if node.is_leaf_node %}
-                                                    <option value="{{node.id}}">{{node.title}}</option>
-                                                {% endif %}
-                                                {% if not node.is_leaf_node %}
-                                                    <optgroup label="{{node.title}}">
-                                                        {{children}}
-                                                    </optgroup>
-                                                {% endif %}
-                                            {% endrecursetree %}
-                                        </select>
-                                        -->
-                                    {% csrf_token %} <!-- formlarda csrf kullanılmalı -->
-                                    <input id="query" class="input" type="text" placeholder="Search.." name="query" >
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-
-                                </form>
-                        </div>
                 </ul>
 
 

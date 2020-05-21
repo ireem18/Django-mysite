@@ -14,10 +14,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="mt-20">
-<section class="story-area left-text center-sm-text mt-50" >
+{% include "search.html" %}
+
+<div class="mb-40">
+<section class="story-area left-text center-sm-text " >
     <div class="heading">
-            <img class="heading-img mt-50" src="{% static 'images/heading_logo.png' %}" alt="">
+            <img class="heading-img " src="{% static 'images/heading_logo.png' %}" alt="">
             <h5 class="mt-1" style="color:#EF0031;">İLETİŞİM BİLGİLERİMİZ</h5>
     </div>
     <div class="row ">
